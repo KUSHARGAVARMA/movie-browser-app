@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../components/Navbar';
 import MovieList from '../components/MovieList';
+import { FavoritesContext } from '../context/FavoritesContext'; // Import the context
 
 const Favorites = () => {
-  const [favorites, setFavorites] = useState([]);
-
-  // Load favorites from localStorage when component mounts
-  useEffect(() => {
-    loadFavorites();
-  }, []);
-
-  const loadFavorites = () => {
-    const savedFavorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    setFavorites(savedFavorites);
-  };
-
-  // Remove a movie from favorites
-  const removeFavorite = (movieId) => {
-    const updatedFavorites = favorites.filter((movie) => movie.id !== movieId);
-    setFavorites(updatedFavorites);
-    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
-  };
+  const { favorites, removeFavorite } = useContext(FavoritesContext); // Access favorites and removeFavorite from context
 
   return (
     <div>

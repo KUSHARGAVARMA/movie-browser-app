@@ -48,8 +48,14 @@ const Navbar = ({ onSearch, resetMovies }) => {
             className="text-neutral-white hover:text-secondary focus:outline-none focus:ring-2 focus:ring-secondary rounded transition-colors duration-200 flex items-center"
             aria-label="Go to Favorites"
           >
-            <FaHeart className="text-red-500 mr-2" /> {/* Heart icon */}
-            Favorites {favorites.length > 0 && `(${favorites.length})`} {/* Display favorite count */}
+         
+            Favorites
+            <FaHeart className="text-red-500 ml-2" /> {/* Heart icon */}
+            {favorites.length > 0 && (
+              <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full transform translate-x-1/5 -translate-y-1/3">
+                {favorites.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>
