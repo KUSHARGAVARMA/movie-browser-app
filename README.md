@@ -154,7 +154,6 @@ The `FavoritesContext` provides a global state for managing the favorites list a
 ## Acknowledgements
 
 - The Movie Database (TMDb) for the movie data.
-- Lottie for providing high-quality animations.
 
 ---
 
